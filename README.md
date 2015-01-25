@@ -1,30 +1,32 @@
-# WildRank - Android App
+# RoboChargers - Android App (Based out of WildRank App)
 
+All Credit goes to WildRank which created the original program which can be found here
+https://github.com/nwalters512/wildrank-android
 
-[![Build Status](https://travis-ci.org/nwalters512/wildrank-android.png?branch=master)](https://travis-ci.org/nwalters512/wildrank-android)
+[![Build Status](https://travis-ci.org/gohak/wildrank-android.png?branch=master)](https://travis-ci.org/gohak/wildrank-android)
 
-An Android app for scouting at FIRST Robotics Competition created by Team 111 WildStang.
+An Android App for scouting at FIRST Robotics Competition created by Team 111 WildStang and modified by Team 3005 RoboChargers.
 
 ##***Important note***
-Team 111 WildStang has only used this app with Motorola Xooms flashed with an AOSP 4.2.2 ROM. This will likely function on other devices, as long as those devices support USB OTG. The only thing likely to change between devices is the mount path of the flash drive. This is not a standardized android feature. To configure this for your specific setup, you should only have to change the functions ```DataManager.getDirectory(...)``` for case ```DIRECTORY_FLASH_ROOT```, ```DataManager.getFlashDriveSyncedDirectory()```, and ```DataManager.getFlashDriveUnintegratedDirectory()``` to return the correct location. We are working on making this selectable within the application so that you can deploy the same build to a variety of Android tablets.
+Team 3005 RoboChargers has only used this app with Motorola Xooms flashed with an AOSP 4.2.2 ROM. This will likely function on other devices, as long as those devices support USB OTG. The only thing likely to change between devices is the mount path of the flash drive. This is not a standardized android feature. To configure this for your specific setup, you should only have to change the functions ```DataManager.getDirectory(...)``` for case ```DIRECTORY_FLASH_ROOT```, ```DataManager.getFlashDriveSyncedDirectory()```, and ```DataManager.getFlashDriveUnintegratedDirectory()``` to return the correct location. We are working on making this selectable within the application so that you can deploy the same build to a variety of Android tablets.
 
-Also note that this app is designed to be used on large tablets. It may work on smaller devices, such as a Nexus 7, but we lacked the hardware to test it on any other devices. It will almost certainly not work properly on phones. We decided that the form factor of a tablet is more suitable for scouting than phones, so we decided not to support phones.
+Also note that this app is designed to be used on large tablets. It also works on smaller devices, such as a Nexus 7. It will almost certainly not work properly on phones. We decided that the form factor of a tablet is more suitable for scouting than phones, so we decided not to support phones.
 
 ## Usage
-WildRank is designed to serve as a platform upon which scouting systems can be built on. WildRank provides match scouting, pit scouting, notetaking, and data analysis. The framework offers checkboxes, counters, text boxes, number fields, and dropdown spinners to be used for data collection.
+RoboChargers is designed to serve as a platform upon which scouting systems can be built on. RoboChargers provides match scouting, pit scouting, notetaking, and data analysis. The framework offers checkboxes, counters, text boxes, number fields, and dropdown spinners to be used for data collection.
 
 This app relies on a companion desktop app, which can be found at [this repository](https://github.com/nwalters512/wildrank-desktop). That app downloads the appropriate list of matches/teams for a given event and puts them on a flash drive, which is then synced to all the tablets to configure them for the given event.
 
 ### Syncing
-WildRank is designed to function without any internet connection after the initial setup. Syncing is done via a flash drive using a USB OTG (On-The-Go) adapter. The adapter is required to connect he flash drive to Android devices. Note that this means that your android device(s) must suppport the OTG protocol; if they do not, you may be able to root your device in order to add support.
+RoboChargers is designed to function without any internet connection after the initial setup. Syncing is done via a micro-USB cable or a flash drive using a USB OTG (On-The-Go) adapter. The adapter is required to connect he flash drive to Android devices. Note that this means that your android device(s) must suppport the OTG protocol; if they do not, you may be able to root your device in order to add support.
 
 For the implementation of syncing, see ```DataManager.syncWithFlashDrive(...)```.
 
-### Important note about how WildRank stores data
-In WildRank, every piece of user-generated is stored as a JSON string in a text file. For instance, the results of match 32 for team 111 would be stored in ```/matches/32/111.json```. This approach was selected over something like an SQL database to allow for the easy changing of models and easy syncing between devices.
+### Important note about how RoboChargers stores data
+In RoboChargers, every piece of user-generated is stored as a JSON string in a text file. For instance, the results of match 32 for team 3005 would be stored in ```/matches/32/3005.json```. This approach was selected over something like an SQL database to allow for the easy changing of models and easy syncing between devices.
 
-### Configuring WildRank for your team
-WildRank is designed to be easy to update for each new game. Most of the app can stay the same year-to-year: team lists, storing data, syncing data, notetaking, etc. Most changes that will need to be made are done via the XML layout files.
+### Configuring RoboChargers for your team
+RoboChargers is designed to be easy to update for each new game. Most of the app can stay the same year-to-year: team lists, storing data, syncing data, notetaking, etc. Most changes that will need to be made are done via the XML layout files.
 
 #### Configuring match scouting
 The relevant XML files for match scouting are:
