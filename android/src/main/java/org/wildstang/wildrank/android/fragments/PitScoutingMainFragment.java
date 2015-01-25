@@ -25,7 +25,9 @@ public class PitScoutingMainFragment extends Fragment implements IListFragmentCa
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        displayAllTeamList();
+        // WG removed this line of code. Don't need it since this function is called later
+        // This was also causing the ghosting effect on the screen.
+        //displayAllTeamList();
     }
 
     @Override

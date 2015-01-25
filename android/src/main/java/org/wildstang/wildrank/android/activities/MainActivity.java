@@ -433,6 +433,10 @@ public class MainActivity extends Activity implements TaskFragment.TaskCallbacks
             // We are already in the appropriate mode. Do nothing.
             return;
         }
+        else {
+            // Set the new mode to the currentTabletMode
+            currentTabletMode = mode;
+        }
         Fragment fragment;
         resetActionBar();
         switch (mode) {
@@ -728,6 +732,8 @@ public class MainActivity extends Activity implements TaskFragment.TaskCallbacks
 
     private void loadConfiguredModeFragment() {
         currentTabletMode = PreferenceManager.getDefaultSharedPreferences(this).getInt(Keys.TABLET_MODE, Keys.TABLET_MODE_MATCH);
-        switchToMode(currentTabletMode);
+        // To force the code to display an initial view from the previous setting
+        int initialTabletMode = currentTabletMode++;
+        switchToMode(initialTabletMode);
     }
 }
