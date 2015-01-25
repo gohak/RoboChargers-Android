@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WildRank</string>
+    <string name="app_name">RoboChargers</string>
 
     <!-- Menus -->
     <string name="action_settings">Settings</string>
@@ -25,7 +25,7 @@
     <string name="button_finish">Finish</string>
 
     <!-- Activity strings -->
-    <string name="activity_launch">WildRank</string>
+    <string name="activity_launch">RoboChargers</string>
     <string name="activity_scout_match">Match Scouting</string>
     <string name="activity_settings">Settings</string>
     <string name="activity_scout_pit">Pit Scouting</string>

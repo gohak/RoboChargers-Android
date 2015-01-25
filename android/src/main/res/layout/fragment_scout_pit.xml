@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/main_info"
-        android:layout_width="250dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -61,8 +61,8 @@
     <!-- Miscelaneous Features -->
 
     <LinearLayout
-        android:id="@+id/features"
-        android:layout_width="300dp"
+        android:id="@+id/features0"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/finish"
         android:layout_alignParentLeft="false"
@@ -72,32 +72,62 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/core_title"
+            android:id="@+id/core_title0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Robot Features"
             android:textSize="30sp" />
 
         <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/catcher"
+            android:id="@+id/pick_up_rc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            custom:key="catcher"
-            custom:label="Catcher?" />
+            custom:key="pick_up_rc"
+            custom:label="Pick-Up RC?" />
 
         <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/accumulator"
+            android:id="@+id/manipulate_rc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            custom:key="accumulator"
-            custom:label="Accumulator?" />
+            custom:key="manipulate_rc"
+            custom:label="Manipulate RC?" />
 
         <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/receive_from_hp"
+            android:id="@+id/manipulate_tote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            custom:key="receive_from_hp"
-            custom:label="Receive from HP?" />
+            custom:key="manipulate_tote"
+            custom:label="Manipulate Tote?" />
+
+        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+            android:id="@+id/stack_tote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:key="stack_tote"
+            custom:label="Stack Tote?" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/features1"
+        android:layout_width="230dp"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/features0"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/core_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Features"
+            android:textSize="30sp" />
+
+        <org.wildstang.wildrank.android.customviews.SerializableNumberView
+            android:id="@+id/robot_reach_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:key="robot_reach_height"
+            custom:label="Stack Height (in)" />
 
         <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
             android:id="@+id/drivetrain"
@@ -107,27 +137,31 @@
             custom:key="drivetrain"
             custom:label="Drivetrain"
             custom:values="@array/frc_drivetrains" />
-
-        <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-            android:id="@+id/shooter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:defaultValue="None"
-            custom:editable="true"
-            custom:key="shooter"
-            custom:label="Shooter"
-            custom:values="@array/frc_shooters" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/notes"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/finish"
+        android:id="@+id/features2"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
         android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/team_picture"
-        android:layout_toRightOf="@id/features"
+        android:layout_toRightOf="@id/features1"
         android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/team_picture_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Team Picture"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@id/team_picture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="Team picture"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/notes_title"
@@ -143,15 +177,6 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
     </LinearLayout>
-
-    <ImageView
-        android:id="@id/team_picture"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:contentDescription="Team picture"
-        android:scaleType="centerCrop" />
 
     <Button
         android:id="@id/finish"

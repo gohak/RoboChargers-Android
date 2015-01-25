@@ -38,7 +38,7 @@
     <org.wildstang.wildrank.android.customviews.TemplatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:text="&lt;b>Catcher:&lt;/b> {{scoring-catcher}}"
+        custom:text="&lt;b>Pick-Up RC:&lt;/b> {{scoring-pick_up_rc}}"
         custom:trueString="yes"
         custom:falseString="no"
         android:textSize="20sp"/>
@@ -46,7 +46,7 @@
     <org.wildstang.wildrank.android.customviews.TemplatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:text="&lt;b>Accumulator:&lt;/b> {{scoring-accumulator}}"
+        custom:text="&lt;b>Accumulator:&lt;/b> {{scoring-manipulate_tote}}"
         custom:trueString="yes"
         custom:falseString="no"
         android:textSize="20sp"/>
@@ -54,7 +54,7 @@
     <org.wildstang.wildrank.android.customviews.TemplatedTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:text="&lt;b>Receive from HP:&lt;/b> {{scoring-receive_from_hp}}"
+        custom:text="&lt;b>Receive from HP:&lt;/b> {{scoring-manipulate_rc}}"
         custom:trueString="yes"
         custom:falseString="no"
         android:textSize="20sp"/>

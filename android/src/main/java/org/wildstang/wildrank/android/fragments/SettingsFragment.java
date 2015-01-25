@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.wildstang.wildrank.android.R;
+import org.wildstang.wildrank.android.activities.MainActivity;
 import org.wildstang.wildrank.android.data.DataManager;
 import org.wildstang.wildrank.android.database.DatabaseContentProvider;
 import org.wildstang.wildrank.android.database.DatabaseContract;
@@ -33,6 +35,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.media.MediaScannerConnection.*;
 
 public class SettingsFragment extends PreferenceFragment {
 
@@ -109,13 +113,15 @@ public class SettingsFragment extends PreferenceFragment {
 
             // Write JSON to the appropriate file
             try {
-                File destination = new File(DataManager.getDirectory(DataManager.DIRECTORY_FLASH_ROOT, f.getActivity()) + File.separator + "picklist" + File.separator + "picklist.json");
+                String picklistPath = DataManager.getDirectory(DataManager.DIRECTORY_FLASH_ROOT, f.getActivity()) + File.separator + "picklist" + File.separator + "picklist.json";
+                File destination = new File(picklistPath);
                 destination.getParentFile().mkdirs();
                 destination.createNewFile();
                 BufferedWriter bw = new BufferedWriter(new FileWriter(destination));
                 bw.write(array.toString());
                 bw.flush();
                 bw.close();
+                DataManager.scanFile(getActivity(),picklistPath);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

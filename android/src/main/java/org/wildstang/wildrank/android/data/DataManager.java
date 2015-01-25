@@ -1,7 +1,10 @@
 package org.wildstang.wildrank.android.data;
 
+import android.app.Fragment;
 import android.content.Context;
+import android.media.MediaScannerConnection;
 import android.util.Log;
+import android.net.Uri;
 
 import org.apache.commons.io.FileUtils;
 import org.wildstang.wildrank.android.utils.Constants;
@@ -163,6 +166,7 @@ public class DataManager {
                 File flashFile = new File(getFlashDriveSyncedDirectory() + File.separator + flashPath);
                 File localFile = new File(getDirectory(DIRECTORY_SYNCED, c) + File.separator + flashPath);
                 syncFile(localFile, flashFile);
+                scanFile(c, getFlashDriveSyncedDirectory() + File.separator + flashPath);
                 flashIterator.remove();
                 localPaths.remove(flashPath);
             } else {
@@ -367,7 +371,7 @@ public class DataManager {
      */
     public static boolean isFlashDriveConnected(Context context) {
         // Test if USB is connected
-        File testFile = new File(getDirectory(DIRECTORY_FLASH_SYNCED, context) + "text.wild");
+        File testFile = new File(getDirectory(DIRECTORY_FLASH_SYNCED, context) + File.separator + "text.wild");
         boolean couldCreate = true;
         try {
             testFile.createNewFile();
@@ -390,6 +394,20 @@ public class DataManager {
         // Test if USB is connected
         File testFile = new File(getDirectory(DIRECTORY_FLASH_SYNCED, context) + "/event/event.json");
         return testFile.exists();
+    }
+
+    /*
+     * Sets the specific file path to be scannable under MPT which means we
+     * can discover it as part of the Internal Storage.
+     */
+    public static void scanFile(Context context, String path) {
+        MediaScannerConnection.scanFile(context,
+                new String[] { path }, null,
+                new MediaScannerConnection.OnScanCompletedListener() {
+
+                    public void onScanCompleted(String path, Uri uri) {
+                    }
+                });
     }
 
     public static void prepareForEject() {
