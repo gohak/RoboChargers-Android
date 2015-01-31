@@ -7,14 +7,16 @@
 
     <!-- General -->
 
+    <!-- Scoring -->
+
     <LinearLayout
-        android:id="@+id/general"
+        android:orientation="vertical"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/linearLayout"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical" >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/general_title"
@@ -23,37 +25,62 @@
             android:text="General"
             android:textSize="30sp" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/autonomous_goalize_zone"
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            custom:key="autonomous-goalie_zone"
-            custom:label="Started in goalie zone" />
+            android:id="@+id/scrollViewGeneral"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/autonomous_started_with_ball"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="autonomous-ball"
-            custom:label="Started with ball" />
+            <LinearLayout
+                android:id="@+id/general"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical" >
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/autonomous_move"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="autonomous-move"
-            custom:label="Moved" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_goalize_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-goalie_zone"
+                    custom:label="Started in goalie zone" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_started_with_ball"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-ball"
+                    custom:label="Started with ball" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_move"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_move"
+                    custom:label="Moved" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_interference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_inter"
+                    custom:label="Interference" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
-    <!-- Scoring -->
-
     <LinearLayout
-        android:id="@+id/scoring"
+        android:orientation="vertical"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/general"
-        android:orientation="vertical" >
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:id="@+id/linearLayout2">
 
         <TextView
             android:id="@+id/scoring_title"
@@ -62,40 +89,87 @@
             android:text="Scoring"
             android:textSize="30sp" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCounterView
-            android:id="@+id/autonomous_hot_goal_high_scored"
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            custom:key="autonomous-scored_hot_high"
-            custom:label="Hot Goal High" />
+            android:id="@+id/scrollViewScoring"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/scrollViewGeneral"
+            android:layout_toEndOf="@+id/scrollViewGeneral">
 
-        <org.wildstang.wildrank.android.customviews.SerializableCounterView
-            android:id="@+id/autonomous_goal_high_scored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="autonomous-scored_high"
-            custom:label="Regular High" />
+            <LinearLayout
+                android:id="@+id/scoring"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/general"
+                android:orientation="vertical" >
 
-        <org.wildstang.wildrank.android.customviews.SerializableCounterView
-            android:id="@+id/autonomous_hot_goal_low_scored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="autonomous-scored_hot_low"
-            custom:label="Hot Goal Low" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_robot_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_robot_set"
+                    custom:label="Robot Set" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCounterView
-            android:id="@+id/autonomous_goal_low_scored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="autonomous-scored_low"
-            custom:label="Regular Low" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_rc_grab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_rc_grab"
+                    custom:label="RC Grab" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCounterView
-            android:id="@+id/autonomous_goal_missed"
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_rc_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_rc_set"
+                    custom:label="RC Set" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="250dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/linearLayout2"
+        android:layout_toEndOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/scoring_title_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            custom:key="autonomous-missed"
-            custom:label="Missed" />
+            android:text="Scoring"
+            android:textSize="30sp" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollViewScoring2" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_tote_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_tote_set"
+                    custom:label="Tote Set" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_tote_stack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_tote_stack"
+                    custom:label="Tote Stack" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
 </RelativeLayout>

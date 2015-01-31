@@ -12,7 +12,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="10dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_alignBottom="@+id/notes">
 
         <TextView
             android:id="@+id/general_title"
@@ -21,47 +22,60 @@
             android:text="General"
             android:textSize="30sp" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/dq"
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            custom:key="post_match-dq"
-            custom:label="DQ" />
+            android:id="@+id/scrollView3" >
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/no_show"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="post_match-no_show"
-            custom:label="No show" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/broke_down"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="post_match-broke_down"
-            custom:label="Broke down" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/no_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="post_match-no_show"
+                    custom:label="No show" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/tipped"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="post_match-tipped"
-            custom:label="Tipped over" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/dq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="post_match-dq"
+                    custom:label="DQ" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/lost_comm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="post_match-lost_comm"
-            custom:label="Lost Comm" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/broke_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="post_match-broke_down"
+                    custom:label="Broke down" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-            android:id="@+id/damaged"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:key="post_match-damaged"
-            custom:label="Damaged" />
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/tipped"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="post_match-tipped"
+                    custom:label="Tipped over" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/lost_comm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="post_match-lost_comm"
+                    custom:label="Lost Comm" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/damaged"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="post_match-damaged"
+                    custom:label="Damaged" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +84,9 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@id/general"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_above="@id/finish"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/fouls_title"
@@ -100,7 +116,9 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/fouls"
         android:orientation="vertical"
-        android:layout_marginRight="10dp" >
+        android:layout_marginRight="10dp"
+        android:layout_alignBottom="@+id/notes"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/ranking_title"
@@ -109,41 +127,63 @@
             android:text="Ranking"
             android:textSize="30sp" />
 
-        <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-            android:id="@+id/defense_rating"
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            custom:editable="false"
-            custom:key="post_match-defense_rating"
-            custom:label="Defense"
-            custom:values="@array/frc_ranking" />
+            android:id="@+id/scrollView2" >
 
-        <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-            android:id="@+id/driver_skill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:editable="false"
-            custom:key="post_match-driver_skill"
-            custom:label="Driver Performance"
-            custom:values="@array/frc_ranking" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-        <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-            android:id="@+id/robot_speed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:editable="false"
-            custom:key="post_match-robot_speed"
-            custom:label="Robot Speed"
-            custom:values="@array/frc_ranking" />
-        
-        <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-            android:id="@+id/floor_pickup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:editable="false"
-            custom:key="post_match-floor_pickup_rating"
-            custom:label="Floor Pickup"
-            custom:values="@array/frc_ranking" />
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/driver_skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="post_match-driver_skill"
+                    custom:label="Driver Performance"
+                    custom:values="@array/frc_ranking" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/driver_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="post_match-defense_speed"
+                    custom:label="Driver Speed"
+                    custom:values="@array/frc_ranking" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/robot_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="post_match-robot_speed"
+                    custom:label="Robot Speed"
+                    custom:values="@array/frc_ranking" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/tote_rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="post_match-tote_stack_rank"
+                    custom:label="Tote Stack Rating"
+                    custom:values="@array/frc_ranking" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/rc_rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="post_match-rc_rank"
+                    custom:label="RC Rating"
+                    custom:values="@array/frc_ranking" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -175,7 +215,9 @@
         android:id="@id/finish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/button_finish"
         android:layout_alignParentBottom="true"
-        android:text="@string/button_finish" />
+        android:layout_alignRight="@+id/notes"
+        android:layout_alignEnd="@+id/notes" />
 
 </RelativeLayout>

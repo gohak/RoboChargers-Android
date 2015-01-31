@@ -14,7 +14,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="10dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_above="@id/finish">
 
         <TextView
             android:id="@+id/general_title"
@@ -113,7 +114,9 @@
         android:layout_height="fill_parent"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@id/features0"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_above="@id/finish"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/core_title1"
@@ -145,7 +148,9 @@
         android:layout_height="fill_parent"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@id/features1"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_above="@id/finish"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/team_picture_title"
