@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentLeft="true">
 
         <TextView
             android:id="@+id/general_title"
@@ -30,12 +29,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/scrollViewGeneral"
             android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentLeft="true">
 
             <LinearLayout
                 android:id="@+id/general"
-                android:layout_width="250dp"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -43,18 +41,11 @@
                 android:orientation="vertical" >
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_goalize_zone"
+                    android:id="@+id/autonomous_staging_zone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="autonomous-goalie_zone"
-                    custom:label="Started in goalie zone" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_started_with_ball"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="autonomous-ball"
-                    custom:label="Started with ball" />
+                    custom:key="autonomous-staging_zone"
+                    custom:label="Started in staging zone" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
                     android:id="@+id/autonomous_move"
@@ -79,7 +70,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout"
         android:id="@+id/linearLayout2">
 
         <TextView
@@ -94,8 +84,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/scrollViewScoring"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/scrollViewGeneral"
-            android:layout_toEndOf="@+id/scrollViewGeneral">
+            android:layout_toRightOf="@+id/scrollViewGeneral">
 
             <LinearLayout
                 android:id="@+id/scoring"
@@ -134,8 +123,7 @@
         android:layout_width="250dp"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/linearLayout2"
-        android:layout_toEndOf="@+id/linearLayout2">
+        android:layout_toRightOf="@+id/linearLayout2">
 
         <TextView
             android:id="@+id/scoring_title_2"

@@ -68,12 +68,12 @@ public class WhiteboardView extends View {
         textPaint = new Paint();
         textPaint.setColor(Color.BLACK);
 
-        magnets.add(new Magnet("1", R.drawable.red_robot, 1110, 100, Color.RED));
-        magnets.add(new Magnet("2", R.drawable.red_robot, 1110, 200, Color.RED));
-        magnets.add(new Magnet("3", R.drawable.red_robot, 1110, 300, Color.RED));
-        magnets.add(new Magnet("1", R.drawable.blue_robot, 700, 540, Color.BLUE));
-        magnets.add(new Magnet("2", R.drawable.blue_robot, 700, 640, Color.BLUE));
-        magnets.add(new Magnet("3", R.drawable.blue_robot, 700, 740, Color.BLUE));
+        magnets.add(new Magnet("1", R.drawable.red_robot, 1000, 100, Color.RED));
+        magnets.add(new Magnet("2", R.drawable.red_robot, 1000, 200, Color.RED));
+        magnets.add(new Magnet("3", R.drawable.red_robot, 1000, 300, Color.RED));
+        magnets.add(new Magnet("1", R.drawable.blue_robot, 300, 340, Color.BLUE));
+        magnets.add(new Magnet("2", R.drawable.blue_robot, 300, 440, Color.BLUE));
+        magnets.add(new Magnet("3", R.drawable.blue_robot, 300, 540, Color.BLUE));
 //        magnets.add(new Magnet("", R.drawable.red_ball, 800, 300, Color.RED));
 //        magnets.add(new Magnet("", R.drawable.blue_ball, 400, 300, Color.BLUE));
         field = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.field);
@@ -132,13 +132,12 @@ public class WhiteboardView extends View {
         if (x > 52 && y < 50 && x < 102) {
             clear();
             magnets.clear();
-            magnets.add(new Magnet("1", R.drawable.red_robot, 1000, 200, Color.RED));
-            magnets.add(new Magnet("2", R.drawable.red_robot, 1000, 300, Color.RED));
-            magnets.add(new Magnet("3", R.drawable.red_robot, 1000, 400, Color.RED));
-            magnets.add(new Magnet("1", R.drawable.blue_robot, 200, 200, Color.BLUE));
-            magnets.add(new Magnet("2", R.drawable.blue_robot, 200, 300, Color.BLUE));
-            magnets.add(new Magnet("3", R.drawable.red_robot, 1000, 400, Color.RED));
-            magnets.add(new Magnet("3", R.drawable.blue_robot, 200, 400, Color.BLUE));
+            magnets.add(new Magnet("1", R.drawable.red_robot, 1000, 100, Color.RED));
+            magnets.add(new Magnet("2", R.drawable.red_robot, 1000, 200, Color.RED));
+            magnets.add(new Magnet("3", R.drawable.red_robot, 1000, 300, Color.RED));
+            magnets.add(new Magnet("1", R.drawable.blue_robot, 300, 200, Color.BLUE));
+            magnets.add(new Magnet("2", R.drawable.blue_robot, 300, 300, Color.BLUE));
+            magnets.add(new Magnet("3", R.drawable.blue_robot, 300, 400, Color.BLUE));
 //            magnets.add(new Magnet("", R.drawable.red_ball, 800, 300, Color.RED));
 //            magnets.add(new Magnet("", R.drawable.blue_ball, 400, 300, Color.BLUE));
             invalidate();

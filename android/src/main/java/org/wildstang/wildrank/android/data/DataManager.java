@@ -166,7 +166,7 @@ public class DataManager {
                 File flashFile = new File(getFlashDriveSyncedDirectory() + File.separator + flashPath);
                 File localFile = new File(getDirectory(DIRECTORY_SYNCED, c) + File.separator + flashPath);
                 syncFile(localFile, flashFile);
-                scanFile(c, getFlashDriveSyncedDirectory() + File.separator + flashPath);
+                scanFile(c, flashFile.getPath());
                 flashIterator.remove();
                 localPaths.remove(flashPath);
             } else {

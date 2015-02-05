@@ -87,8 +87,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/tote_scoring"
-        android:layout_toEndOf="@+id/tote_scoring">
+        android:layout_toRightOf="@+id/tote_scoring">
 
         <TextView
             android:id="@+id/rc_title"
@@ -130,8 +129,7 @@
         android:layout_height="fill_parent"
         android:id="@+id/litter_container"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/recycling_container"
-        android:layout_toEndOf="@+id/recycling_container">
+        android:layout_toRightOf="@+id/recycling_container">
 
         <TextView
             style="@style/ScoutingSectionTitle"
@@ -174,8 +172,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignBottom="@+id/recycling_container"
-        android:layout_toRightOf="@+id/litter_container"
-        android:layout_toEndOf="@+id/litter_container">
+        android:layout_toRightOf="@+id/litter_container">
 
         <TextView
             android:id="@+id/co_op_title"

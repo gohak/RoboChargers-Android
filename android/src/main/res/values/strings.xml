@@ -5,7 +5,7 @@
 
     <!-- Menus -->
     <string name="action_settings">Settings</string>
-    <string name="action_synchronize_with_flash_drive">Synchronize with Flash Drive</string>
+    <string name="action_synchronize_with_flash_drive">Synchronize with PC</string>
     <string name="action_take_picture">Take picture</string>
 
     <!-- Match scouting strings -->
@@ -122,6 +122,12 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+    <string-array name="frc_zone">
+        <item></item>
+        <item>Staging Zones</item>
+        <item>Auto Zones</item>
+        <item>Landfill</item>
     </string-array>
 
     <!-- Navigation Drawer -->
