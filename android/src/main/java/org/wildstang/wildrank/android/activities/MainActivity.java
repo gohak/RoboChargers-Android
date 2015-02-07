@@ -234,8 +234,8 @@ public class MainActivity extends Activity implements TaskFragment.TaskCallbacks
     public void onPostExecute(TaskType type) {
         if (type == TaskType.TASK_SYNCHRONIZE_WITH_FLASH_DRIVE) {
             DataManager.prepareForEject();
-            startActivity(new Intent(android.provider.Settings.ACTION_INTERNAL_STORAGE_SETTINGS));
-            Toast.makeText(this, "Scroll down, press \"Unmount\", press back button.", Toast.LENGTH_LONG).show();
+//            startActivity(new Intent(android.provider.Settings.ACTION_INTERNAL_STORAGE_SETTINGS));
+//            Toast.makeText(this, "Scroll down, press \"Unmount\", press back button.", Toast.LENGTH_LONG).show();
             resetFragments();
         }
     }

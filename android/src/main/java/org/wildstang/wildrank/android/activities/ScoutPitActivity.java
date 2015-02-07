@@ -129,7 +129,7 @@ public class ScoutPitActivity extends ScoutingActivity {
             DataManager.getInstance().saveChangedFile(this, data);
             Toast.makeText(this, "Pit data saved successfully", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            Toast.makeText(this, "Pit data saved successfullyError saving pit data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error saving pit data", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
         this.finish();

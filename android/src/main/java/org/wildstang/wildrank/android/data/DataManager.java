@@ -96,8 +96,17 @@ public class DataManager {
         listFilesInDirectory(getQueueDirectory(context), queuedFiles);
         for (File file : queuedFiles) {
             File destinationFile;
-            if (!file.getAbsolutePath().contains("notes")) {
-                destinationFile = new File(getFlashDriveSyncedDirectory() + File.separator + getRelativePathFromInternalStorage(context, file));
+            destinationFile = new File(getFlashDriveSyncedDirectory() + File.separator + getRelativePathFromInternalStorage(context, file));
+            if (file.getAbsolutePath().contains("notes")) {
+                if (!destinationFile.exists()) {
+                    // If destination file does not exist, copy the file from queue to sync
+                    FileUtils.copyFile(file, destinationFile);
+                } else {
+                    // If file exist, append the notes to the previous text.
+                    copyFileWithAppend(file, destinationFile);
+                }
+            } else {
+                // Anything that is not notes related will just copy the files
                 FileUtils.copyFile(file, destinationFile);
             }
         }
@@ -157,7 +166,11 @@ public class DataManager {
             flashPaths.add(getRelativePathForFlashDrive(c, file));
         }
 
+        // See how many files in the flash vs local
+        // if local > flash files, then we need to copy.
+        // if flash > local files, then we need to copy it also.
 
+        // This syncs between the Flash drive or Internal Storage with the local data
         Iterator<String> flashIterator = flashPaths.iterator();
         while (flashIterator.hasNext()) {
             String flashPath = flashIterator.next();
@@ -176,11 +189,44 @@ public class DataManager {
                 try {
                     localFile.createNewFile();
                     FileUtils.copyFile(flashFile, localFile);
+                    scanFile(c, flashFile.getPath());
                     Log.d("sync", "new file created!");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 flashIterator.remove();
+            }
+        }
+
+        Log.d("sync", "Sync between local to flash based on the number of files from local");
+
+        // Now we need to sync back from the local data to the flash drive in-case there are new
+        // files on the local which needs to be synced with the flash memory.
+        // Reset the counter
+        Iterator<String> localIterator = localPaths.iterator();
+        while (localIterator.hasNext()) {
+            String localPath = localIterator.next();
+            totalFiles++;
+            if (localPaths.contains(localPath)) {
+                File flashFile = new File(getFlashDriveSyncedDirectory() + File.separator + localPath);
+                File localFile = new File(getDirectory(DIRECTORY_SYNCED, c) + File.separator + localPath);
+                syncFile(flashFile, localFile);
+                scanFile(c, flashFile.getPath());
+                localIterator.remove();
+                localPaths.remove(localPath);
+            } else {
+                File flashFile = new File(getFlashDriveSyncedDirectory() + File.separator + localPath);
+                File localFile = new File(getDirectory(DIRECTORY_SYNCED, c) + File.separator + localPath);
+                flashFile.getParentFile().mkdirs();
+                try {
+                    flashFile.createNewFile();
+                    FileUtils.copyFile(localFile, flashFile);
+                    scanFile(c, flashFile.getPath());
+                    Log.d("sync", "new file created!");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                localIterator.remove();
             }
         }
 
@@ -242,6 +288,9 @@ public class DataManager {
         BufferedReader sourceReader = new BufferedReader(new FileReader(source));
         BufferedWriter destinationWriter = new BufferedWriter(new FileWriter(destination, true));
         String line;
+        // Put a period and a newline automatically to signify a new note.
+        destinationWriter.newLine();
+        // append the file now
         while ((line = sourceReader.readLine()) != null) {
             destinationWriter.write(line);
             destinationWriter.newLine();

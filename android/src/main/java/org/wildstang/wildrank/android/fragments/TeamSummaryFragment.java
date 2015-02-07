@@ -107,6 +107,8 @@ public class TeamSummaryFragment extends Fragment implements LoaderCallbacks<Cur
         try {
             if (DataManager.loadDataIfExists(notesData, getActivity(), DataManager.DIRECTORY_SYNCED)) {
                 notesView.setText(notesData.getContent().trim());
+            } else if (DataManager.loadDataIfExists(notesData, getActivity(), DataManager.DIRECTORY_QUEUE)) {
+                notesView.setText(notesData.getContent().trim());
             } else {
                 notesView.setText("No available notes");
             }

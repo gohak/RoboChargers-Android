@@ -267,8 +267,9 @@ public class SettingsFragment extends PreferenceFragment {
         progress.dismiss();
         progress = null;
         DataManager.prepareForEject();
-        startActivity(new Intent(android.provider.Settings.ACTION_INTERNAL_STORAGE_SETTINGS));
-        Toast.makeText(getActivity(), "Scroll down, press \"Unmount\", press back button.", Toast.LENGTH_LONG).show();
+        //WG: Removed code since we no longer use Flash OTG
+//        startActivity(new Intent(android.provider.Settings.ACTION_INTERNAL_STORAGE_SETTINGS));
+//        Toast.makeText(getActivity(), "Scroll down, press \"Unmount\", press back button.", Toast.LENGTH_LONG).show();
     }
 
     private void startImport() {

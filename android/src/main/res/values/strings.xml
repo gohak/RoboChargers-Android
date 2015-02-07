@@ -23,6 +23,7 @@
     <string name="button_rescout_team">Rescout This Team</string>
     <string name="button_take_notes">Take Notes</string>
     <string name="button_finish">Finish</string>
+    <string name="button_save_notes">Save Notes</string>
 
     <!-- Activity strings -->
     <string name="activity_launch">RoboChargers</string>
