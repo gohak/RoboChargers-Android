@@ -41,25 +41,32 @@
                 android:orientation="vertical" >
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_staging_zone"
+                    android:id="@+id/autonomous_starting_pos_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="autonomous-staging_zone"
-                    custom:label="Started in staging zone" />
+                    custom:key="autonomous-starting_pos_one"
+                    custom:label="Started in Pos 1" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_move"
+                    android:id="@+id/autonomous_starting_pos_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="autonomous-auto_move"
-                    custom:label="Moved" />
+                    custom:key="autonomous-starting_pos_two"
+                    custom:label="Started in Pos 2" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_interference"
+                    android:id="@+id/autonomous_starting_pos_three"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="autonomous-auto_inter"
-                    custom:label="Interference" />
+                    custom:key="autonomous-starting_pos_three"
+                    custom:label="Started in Pos 3" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_start_fwd_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_start_fwd_zone"
+                    custom:label="Started Forward Zone" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -94,14 +101,14 @@
                 android:layout_toRightOf="@id/general"
                 android:orientation="vertical" >
 
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_robot_set"
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/autonomous_tote_grab"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="autonomous-auto_robot_set"
-                    custom:label="Robot Set" />
+                    custom:key="autonomous-auto_tote_grab"
+                    custom:label="Tote Grab" />
 
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
                     android:id="@+id/autonomous_rc_grab"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -109,11 +116,19 @@
                     custom:label="RC Grab" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_rc_set"
+                    android:id="@+id/autonomous_move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_move"
+                    custom:label="Move to Auto Zone" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/autonomous_rc_from_step"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="autonomous-auto_rc_set"
-                    custom:label="RC Set" />
+                    custom:key="autonomous-auto_rc_from_step"
+                    custom:label="RC from Step" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -155,6 +170,13 @@
                     android:layout_height="wrap_content"
                     custom:key="autonomous-auto_tote_stack"
                     custom:label="Tote Stack" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_rc_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_rc_set"
+                    custom:label="RC Set" />
             </LinearLayout>
         </ScrollView>
 

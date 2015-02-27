@@ -66,6 +66,30 @@
                 android:layout_marginTop="20dp" />
 
             <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/auto_start_pos_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(autonomous-starting_pos_one)"
+                custom:format="percentage"
+                custom:label="Average Robot Started in Position 1" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/auto_start_pos_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(autonomous-starting_pos_two)"
+                custom:format="percentage"
+                custom:label="Average Robot Started in Position 2" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/auto_start_pos_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(autonomous-starting_pos_three)"
+                custom:format="percentage"
+                custom:label="Average Robot Started in Position 3" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
                 android:id="@+id/auto_robot_moved"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,12 +98,26 @@
                 custom:label="Average Robot Moved (not Set)" />
 
             <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/auto_robot_interference"
+                android:id="@+id/auto_robot_started_fwd_zone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                custom:expression="AVERAGE(autonomous-auto_inter)"
+                custom:expression="AVERAGE(autonomous-auto_start_fwd_zone)"
                 custom:format="percentage"
-                custom:label="Average Robot Interference" />
+                custom:label="Average Started Forward Zone" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/auto_robot_tote_grab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(autonomous-auto_tote_grab)"
+                custom:label="Average Tote Grab Number" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/auto_robot_rc_from_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(autonomous-auto_rc_from_step)"
+                custom:label="Average RC from Step" />
 
             <org.wildstang.wildrank.android.customviews.DataView
                 android:id="@+id/auto_robot_tote_set"
@@ -102,7 +140,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 custom:expression="AVERAGE(autonomous-auto_rc_grab)"
-                custom:format="percentage"
                 custom:label="Average RC Grab" />
 
             <org.wildstang.wildrank.android.customviews.DataView
