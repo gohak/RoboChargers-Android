@@ -17,13 +17,13 @@ public class PasswordProtectionFragment extends Fragment implements OnClickListe
         public void passwordSuccess();
     }
 
-    private final String CONFIGURED_PASSWORD = "9453";
+    private final String CONFIGURED_PASSWORD = "3005";
 
     public static final String COLOR_THEME = "theme";
     public static final int THEME_DARK = 1;
     public static final int THEME_LIGHT = 2;
 
-    private Button[] buttons = new Button[9];
+    private Button[] buttons = new Button[10];
     private TextView entryView;
     private TextView messageView;
     private int colorTheme;
@@ -43,15 +43,16 @@ public class PasswordProtectionFragment extends Fragment implements OnClickListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_password_protection, container, false);
-        buttons[0] = (Button) view.findViewById(R.id.button1);
-        buttons[1] = (Button) view.findViewById(R.id.button2);
-        buttons[2] = (Button) view.findViewById(R.id.button3);
-        buttons[3] = (Button) view.findViewById(R.id.button4);
-        buttons[4] = (Button) view.findViewById(R.id.button5);
-        buttons[5] = (Button) view.findViewById(R.id.button6);
-        buttons[6] = (Button) view.findViewById(R.id.button7);
-        buttons[7] = (Button) view.findViewById(R.id.button8);
-        buttons[8] = (Button) view.findViewById(R.id.button9);
+        buttons[0] = (Button) view.findViewById(R.id.button0);
+        buttons[1] = (Button) view.findViewById(R.id.button1);
+        buttons[2] = (Button) view.findViewById(R.id.button2);
+        buttons[3] = (Button) view.findViewById(R.id.button3);
+        buttons[4] = (Button) view.findViewById(R.id.button4);
+        buttons[5] = (Button) view.findViewById(R.id.button5);
+        buttons[6] = (Button) view.findViewById(R.id.button6);
+        buttons[7] = (Button) view.findViewById(R.id.button7);
+        buttons[8] = (Button) view.findViewById(R.id.button8);
+        buttons[9] = (Button) view.findViewById(R.id.button9);
         for (Button button : buttons) {
             button.setOnClickListener(this);
         }
@@ -87,7 +88,7 @@ public class PasswordProtectionFragment extends Fragment implements OnClickListe
     public void onClick(View v) {
         for (int i = 0; i < buttons.length; i++) {
             if (v == buttons[i]) {
-                enteredPassword.append(Integer.toString(i + 1));
+                enteredPassword.append(Integer.toString(i));
                 updatePassword();
             }
         }
