@@ -31,32 +31,25 @@
                 android:textSize="20sp" />
 
             <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/average_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="6*AVERAGE(autonomous-scored_low) + 11*AVERAGE(autonomous-scored_hot_low) + 15*AVERAGE(autonomous-scored_high) + 20*AVERAGE(autonomous-scored_hot_high) + 5*AVERAGE(autonomous-move) + 1*AVERAGE(teleop-scored_low) + 10*AVERAGE(teleop-scored_high) + 10*AVERAGE(teleop-truss) + 10*AVERAGE(teleop-truss_catch_count)"
-                custom:label="Average Points / Match" />
-            
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/average_score_with_fouls"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="6*AVERAGE(autonomous-scored_low) + 11*AVERAGE(autonomous-scored_hot_low) + 15*AVERAGE(autonomous-scored_high) + 20*AVERAGE(autonomous-scored_hot_high) + 5*AVERAGE(autonomous-move) + 1*AVERAGE(teleop-scored_low) + 10*AVERAGE(teleop-scored_high) + 10*AVERAGE(teleop-truss) + 10*AVERAGE(teleop-truss_catch_count) - 20*AVERAGE(post_match-foul_general) - 50*AVERAGE(post_match-foul_technical)"
-                custom:label="Average Points / Match (With Fouls)" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
                 android:id="@+id/average_teleop_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                custom:expression="6*AVERAGE(autonomous-scored_low) + 11*AVERAGE(autonomous-scored_hot_low) + 15*AVERAGE(autonomous-scored_high) + 20*AVERAGE(autonomous-scored_hot_high) + 5*AVERAGE(autonomous-move)"
-                custom:label="Average Auto Points / Match" />
+                custom:expression="2*AVERAGE(teleop-num_tote_stk_1) + 4*AVERAGE(teleop-num_tote_stk_1)*AVERAGE(teleop-stk_rc_1) + 6*AVERAGE(teleop-stk_litter_1) + 2*AVERAGE(teleop-num_tote_stk_2) + 4*AVERAGE(teleop-num_tote_stk_2)*AVERAGE(teleop-stk_rc_2) + 6*AVERAGE(teleop-stk_litter_2) + 2*AVERAGE(teleop-num_tote_stk_3) + 4*AVERAGE(teleop-num_tote_stk_3)*AVERAGE(teleop-stk_rc_3) + 6*AVERAGE(teleop-stk_litter_3) + 2*AVERAGE(teleop-num_tote_stk_4) + 4*AVERAGE(teleop-num_tote_stk_4)*AVERAGE(teleop-stk_rc_4) + 6*AVERAGE(teleop-stk_litter_4) + 2*AVERAGE(teleop-num_tote_stk_5) + 4*AVERAGE(teleop-num_tote_stk_5)*AVERAGE(teleop-stk_rc_5) + 6*AVERAGE(teleop-stk_litter_5) + 2*AVERAGE(teleop-num_tote_stk_6) + 4*AVERAGE(teleop-num_tote_stk_6)*AVERAGE(teleop-stk_rc_6) + 6*AVERAGE(teleop-stk_litter_6)"
+                custom:label="Average Teleop Points / Match" />
 
             <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/average_auto_score"
+                android:id="@+id/average_stack_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                custom:expression="1*AVERAGE(teleop-scored_low) + 10*AVERAGE(teleop-scored_high) + 10*AVERAGE(teleop-truss) + 10*AVERAGE(teleop-truss_catch_count)"
-                custom:label="Average Teleop Points / Match" />
+                custom:expression="AVERAGE(teleop-stk_speed_1) + AVERAGE(teleop-stk_speed_2) + AVERAGE(teleop-stk_speed_3) + AVERAGE(teleop-stk_speed_4) + AVERAGE(teleop-stk_speed_5) + AVERAGE(teleop-stk_speed_6)"
+                custom:label="Average Stack Time (sec)" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/average_foul_scores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="6*AVERAGE(post_match-foul_general) + 6*AVERAGE(post_match-foul_technical)"
+                custom:label="Average Foul Points" />
 
             <TextView
                 android:id="@+id/auto_header"
@@ -95,15 +88,7 @@
                 android:layout_height="wrap_content"
                 custom:expression="AVERAGE(autonomous-auto_move)"
                 custom:format="percentage"
-                custom:label="Average Robot Moved (not Set)" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/auto_robot_started_fwd_zone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(autonomous-auto_start_fwd_zone)"
-                custom:format="percentage"
-                custom:label="Average Started Forward Zone" />
+                custom:label="Average Robot Moved to Auto Zone" />
 
             <org.wildstang.wildrank.android.customviews.DataView
                 android:id="@+id/auto_robot_tote_grab"
@@ -111,6 +96,13 @@
                 android:layout_height="wrap_content"
                 custom:expression="AVERAGE(autonomous-auto_tote_grab)"
                 custom:label="Average Tote Grab Number" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/auto_robot_rc_grab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(autonomous-auto_rc_grab)"
+                custom:label="Average RC Grab" />
 
             <org.wildstang.wildrank.android.customviews.DataView
                 android:id="@+id/auto_robot_rc_from_step"
@@ -136,13 +128,6 @@
                 custom:label="Average Tote Stack" />
 
             <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/auto_robot_rc_grab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(autonomous-auto_rc_grab)"
-                custom:label="Average RC Grab" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
                 android:id="@+id/auto_robot_rc_set"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -166,96 +151,35 @@
                 custom:label="Average Broken Down" />
 
             <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_stack_speed_sec"
+                android:id="@+id/data_teleop_driver_skill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-stack_speed_sec)"
-                custom:label="Average Stack Speed" />
+                custom:expression="AVERAGE(post_match-driver_skill)"
+                custom:label="Average Driver Skill" />
 
             <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_max_stack_height"
+                android:id="@+id/data_teleop_coop_capable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-max_stack_height)"
-                custom:label="Average Max Stack Height" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_num_max_stack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-total_max)"
-                custom:label="Average Number of Max Stack" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_total_stack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-total_stacks)"
-                custom:label="Average Total Stack" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_total_failed_stack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-total_failed_stacks)"
-                custom:label="Average Failed Stack" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_manipulated_totes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-teleop_manipulated_totes)"
-                custom:label="Average Totes Manipulated" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_manipulated_rc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-teleop_manipulated_rc)"
-                custom:label="Average Manipulated RC" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_rc_cap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-rc_cap)"
-                custom:label="Average RC Scored" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_litter_cap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-litter_cap)"
-                custom:label="Average Litter Caps" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_field_litter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-field_litter)"
-                custom:label="Average Field Litter" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_coop_set"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-co_set)"
-                custom:label="Average Co-op Set" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_coop_stack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="AVERAGE(teleop-co_stack)"
-                custom:label="Average Co-op Stack" />
-
-            <org.wildstang.wildrank.android.customviews.DataView
-                android:id="@+id/data_teleop_percent_made"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:expression="(AVERAGE(teleop-scored_low) + AVERAGE(teleop-scored_high))/(AVERAGE(teleop-scored_low) + AVERAGE(teleop-scored_high) + AVERAGE(teleop-missed))"
+                custom:expression="AVERAGE(teleop-co_capable)"
                 custom:format="percentage"
-                custom:label="Average % Made" />
+                custom:label="Average Co-op Capable Performing" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/data_teleop_coop_reliable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(teleop-co_reliable)"
+                custom:format="percentage"
+                custom:label="Average Co-op Reliability" />
+
+            <org.wildstang.wildrank.android.customviews.DataView
+                android:id="@+id/data_teleop_coop_step_totes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:expression="AVERAGE(teleop-co_step_totes)"
+                custom:label="Average Co-op Stack Step Totes" />
+
         </LinearLayout>
     </ScrollView>
 

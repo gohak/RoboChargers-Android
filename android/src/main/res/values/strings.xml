@@ -124,11 +124,39 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+    <string-array name="frc_secs">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>999</item>
+    </string-array>
+    <string-array name="frc_driver_performance">
+        <item></item>
+        <item>Dead Bot</item>
+        <item>Slow and Clunky</item>
+        <item>Fast but Scary</item>
+        <item>Slow but Reliably</item>
+        <item>Fast and Accurate</item>
+    </string-array>
     <string-array name="frc_zone">
         <item></item>
         <item>Staging Zones</item>
         <item>Auto Zones</item>
         <item>Landfill</item>
+    </string-array>
+    <string-array name="frc_preferred_list">
+        <item></item>
+        <item>No Preference</item>
+        <item>Landfill Totes</item>
+        <item>Chute Totes</item>
+        <item>Totes and RCs</item>
     </string-array>
 
     <!-- Navigation Drawer -->

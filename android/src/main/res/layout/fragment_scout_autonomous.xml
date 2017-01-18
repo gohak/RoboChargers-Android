@@ -115,19 +115,19 @@
                     custom:key="autonomous-auto_rc_grab"
                     custom:label="RC Grab" />
 
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/autonomous_move"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    custom:key="autonomous-auto_move"
-                    custom:label="Move to Auto Zone" />
-
                 <org.wildstang.wildrank.android.customviews.SerializableCounterView
                     android:id="@+id/autonomous_rc_from_step"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     custom:key="autonomous-auto_rc_from_step"
                     custom:label="RC from Step" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/autonomous_move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:key="autonomous-auto_move"
+                    custom:label="Move to Auto Zone" />
 
             </LinearLayout>
         </ScrollView>

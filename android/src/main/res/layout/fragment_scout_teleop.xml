@@ -7,206 +7,303 @@
 
     <!-- General info -->
 
-    <LinearLayout
-        android:id="@+id/tote_scoring"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/general_title"
-            style="@style/ScoutingSectionTitle"
-            android:text="Tote" />
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollViewGeneralInfo" >
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_stack_speed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="teleop-stack_speed_sec"
-                    custom:label="Stack speed (sec)" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_max_stack_height"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="teleop-max_stack_height"
-                    custom:label="Max stack height" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_total_max"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="teleop-total_max"
-                    custom:label="Number of max stack" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_total_stacks"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="teleop-total_stacks"
-                    custom:label="Total stacks" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_failed_stacks"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="teleop-total_failed_stacks"
-                    custom:label="Failed stacks" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/teleop_manipulate_totes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="teleop-teleop_manipulated_totes"
-                    custom:label="Manipulated totes" />
-            </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>
-
     <!-- Assists info -->
 
     <!-- Scoring info -->
 
-    <LinearLayout
-        android:id="@+id/recycling_container"
-        android:layout_width="200dp"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/scrollView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/tote_scoring">
+        android:layout_alignParentBottom="true">
 
-        <TextView
-            android:id="@+id/rc_title"
-            style="@style/ScoutingSectionTitle"
-            android:text="RC" />
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollViewRc"
-            android:fillViewport="false">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/linearToteLayout">
+
+                <TextView
+                    android:id="@+id/general_title"
+                    style="@style/ScoutingSectionTitle"
+                    android:text="Tote" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_num_tote_stk_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-num_tote_stk_1"
+                    custom:label="Stack 1" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_num_tote_stk_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-num_tote_stk_2"
+                    custom:label="Stack 2" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_num_tote_stk_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-num_tote_stk_3"
+                    custom:label="Stack 3" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_num_tote_stk_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-num_tote_stk_4"
+                    custom:label="Stack 4" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_num_tote_stk_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-num_tote_stk_5"
+                    custom:label="Stack 5" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_num_tote_stk_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-num_tote_stk_6"
+                    custom:label="Stack 6" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recycling_container"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/linearToteLayout">
+
+                <TextView
+                    android:id="@+id/rc_title"
+                    style="@style/ScoutingSectionTitle"
+                    android:text="RC" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/teleop_manipulate_rc"
+                    android:id="@+id/teleop_stk_rc_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="teleop-teleop_manipulated_rc"
-                    custom:label="Manipulated RC" />
+                    custom:key="teleop-stk_rc_1"
+                    custom:label="" />
 
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_rc_cap"
-                    android:layout_width="fill_parent"
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_rc_2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="teleop-rc_cap"
-                    custom:label="RC Caps" />
+                    custom:key="teleop-stk_rc_2"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_rc_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_rc_3"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_rc_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_rc_4"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_rc_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_rc_5"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_rc_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_rc_6"
+                    custom:label="" />
+
             </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="220dp"
-        android:layout_height="fill_parent"
-        android:id="@+id/litter_container"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/recycling_container">
-
-        <TextView
-            style="@style/ScoutingSectionTitle"
-            android:id="@+id/litter_title"
-            android:text="Litter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollViewLitter" >
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-            <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                android:id="@+id/teleop_litter_cap"
-                android:layout_width="fill_parent"
+                android:id="@+id/litter_scoring"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                custom:key="teleop-litter_cap"
-                custom:label="Litter caps" />
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/recycling_container">
 
-            <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_field_litter"
+                <TextView
+                    style="@style/ScoutingSectionTitle"
+                    android:id="@+id/litter_title"
+                    android:text="Litter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_litter_1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    custom:key="teleop-field_litter"
-                    custom:label="Field litter" />
+                    custom:key="teleop-stk_litter_1"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_litter_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_litter_2"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_litter_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_litter_3"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_litter_4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_litter_4"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_litter_5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_litter_5"
+                    custom:label="" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_stk_litter_6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-stk_litter_6"
+                    custom:label="" />
 
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/scoring"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignBottom="@+id/recycling_container"
-        android:layout_toRightOf="@+id/litter_container">
-
-        <TextView
-            android:id="@+id/co_op_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Co-op"
-            android:textSize="30sp" />
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollViewScoring" >
 
             <LinearLayout
+                android:id="@+id/stacking_speed"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/scoring_scroll">
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/litter_scoring">
 
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_co_set"
+                <TextView
+                    android:id="@+id/stack_speed_title"
+                    style="@style/ScoutingSectionTitle"
+                    android:text="Speed" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/teleop_stk_speed_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="teleop-co_set"
-                    custom:label="Co-op set" />
+                    custom:editable="false"
+                    custom:key="teleop-stk_speed_1"
+                    custom:label=""
+                    custom:values="@array/frc_secs" />
 
-                <org.wildstang.wildrank.android.customviews.SerializableCounterView
-                    android:id="@+id/teleop_co_stack"
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/teleop_stk_speed_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    custom:key="teleop-co_stack"
-                    custom:label="Co-op stack" />
+                    custom:editable="false"
+                    custom:key="teleop-stk_speed_2"
+                    custom:label=""
+                    custom:values="@array/frc_secs" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/teleop_stk_speed_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="teleop-stk_speed_3"
+                    custom:label=""
+                    custom:values="@array/frc_secs" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/teleop_stk_speed_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="teleop-stk_speed_4"
+                    custom:label=""
+                    custom:values="@array/frc_secs" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/teleop_stk_speed_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="teleop-stk_speed_5"
+                    custom:label=""
+                    custom:values="@array/frc_secs" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/teleop_stk_speed_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="teleop-stk_speed_6"
+                    custom:label=""
+                    custom:values="@array/frc_secs" />
+
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/scoring_scroll"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/stacking_speed">
+
+                <TextView
+                    android:id="@+id/co_op_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Co-op"
+                    android:textSize="30sp" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_co_capable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-co_capable"
+                    custom:label="Capable of co-op?" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
+                    android:id="@+id/teleop_co_reliable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-co_reliable"
+                    custom:label="Sets in co-op reliably?" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableCounterView
+                    android:id="@+id/teleop_co_step_totes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:key="teleop-co_step_totes"
+                    custom:label="Step Totes" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

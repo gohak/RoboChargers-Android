@@ -77,7 +77,7 @@ public class MainActivity extends Activity implements TaskFragment.TaskCallbacks
     private int summariesNavSpinnerMatch = 0;
     private int currentTabletMode = 0;
 
-    boolean superUserMode = false;
+    boolean superUserMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:id="@id/general"
-        android:layout_width="250dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -31,13 +31,6 @@
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
-
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/teamwork"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="post_match-teamwork"
-                    custom:label="Demo Teamwork?" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
                     android:id="@+id/no_show"
@@ -68,13 +61,6 @@
                     custom:label="Tipped over" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
-                    android:id="@+id/lost_comm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:key="post_match-lost_comm"
-                    custom:label="Lost Comm" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableCheckboxView
                     android:id="@+id/damaged"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,7 +73,7 @@
 
     <LinearLayout
         android:id="@+id/fouls"
-        android:layout_width="250dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@id/general"
@@ -119,7 +105,7 @@
 
     <LinearLayout
         android:id="@+id/ranking"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/fouls"
         android:orientation="vertical"
@@ -151,25 +137,7 @@
                     custom:editable="false"
                     custom:key="post_match-driver_skill"
                     custom:label="Driver Performance"
-                    custom:values="@array/frc_ranking" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-                    android:id="@+id/driver_speed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:editable="false"
-                    custom:key="post_match-driver_speed"
-                    custom:label="Driver Speed"
-                    custom:values="@array/frc_ranking" />
-
-                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
-                    android:id="@+id/robot_speed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    custom:editable="false"
-                    custom:key="post_match-robot_speed"
-                    custom:label="Robot Speed"
-                    custom:values="@array/frc_ranking" />
+                    custom:values="@array/frc_driver_performance" />
 
                 <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
                     android:id="@+id/tote_rank"
@@ -197,6 +165,15 @@
                     custom:key="post_match-zone"
                     custom:label="Zone"
                     custom:values="@array/frc_zone" />
+
+                <org.wildstang.wildrank.android.customviews.SerializableSpinnerView
+                    android:id="@+id/preferred_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:editable="false"
+                    custom:key="post_match-preferred_items"
+                    custom:label="Preferred Items"
+                    custom:values="@array/frc_preferred_list" />
 
             </LinearLayout>
         </ScrollView>
